@@ -1,21 +1,31 @@
-s = "abc" 
-t = "ahbgdc"
+s = "pwwkew"
 
-def isSubsequence(s, t):
+def lengthOfLongestSubstring(s):
+        
+        if len(s) == 1:
+              return 1
 
-        i = j = 0
-        sub = ""
+        longest = 0
+        
+        for i in range(len(s)):
 
-        while i < len(t) and j < len(s):
-            if(t[i]==s[j]):
-                sub+=t[i]
-                i+=1
-                j+=1
-                if(sub==s):
-                    return True
-            else:
-                i+=1
+            substring = []
 
-        return sub==s
+            for j in range(i, len(s)):
 
-isSubsequence(s,t)
+                if substring.__contains__(s[j]) == False:
+                    substring.append(s[j])
+                    aux = substring
+                    continue
+
+                if(len(substring)>longest):
+                    longest = len(substring)
+
+                break
+            
+            if(len(aux)>longest):
+                    longest = len(aux)
+
+        return longest
+            
+print(lengthOfLongestSubstring(s))

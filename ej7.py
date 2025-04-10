@@ -1,14 +1,20 @@
-s = "A man, a plan, a canal: Panama"
+nums = [3,2,2,3]
+val = 3
 
-def isPalindrome(s):
+def removeElement(nums, val):
+        
+        i = 0
+        k = 0
+        length = len(nums)
+        
+        while i < length:
+            if nums[i] == val:
+                nums.pop(i)
+                length -= 1
+                continue
+            k += 1
+            i += 1
 
-        clean_s = ''.join(char for char in s if char.isalnum())
-        clean_s = clean_s.lower()
+        return nums
 
-        for i in range(len(clean_s)//2 + 1):
-
-            if clean_s[i] != clean_s[len(clean_s)-(i+1)]:
-                return False
-        return True
-
-print(isPalindrome(s))
+print(removeElement(nums, val))

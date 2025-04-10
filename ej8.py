@@ -1,31 +1,14 @@
-s = "pwwkew"
+s = "A man, a plan, a canal: Panama"
 
-def lengthOfLongestSubstring(s):
-        
-        if len(s) == 1:
-              return 1
+def isPalindrome(s):
 
-        longest = 0
-        
-        for i in range(len(s)):
+        clean_s = ''.join(char for char in s if char.isalnum())
+        clean_s = clean_s.lower()
 
-            substring = []
+        for i in range(len(clean_s)//2 + 1):
 
-            for j in range(i, len(s)):
+            if clean_s[i] != clean_s[len(clean_s)-(i+1)]:
+                return False
+        return True
 
-                if substring.__contains__(s[j]) == False:
-                    substring.append(s[j])
-                    aux = substring
-                    continue
-
-                if(len(substring)>longest):
-                    longest = len(substring)
-
-                break
-            
-            if(len(aux)>longest):
-                    longest = len(aux)
-
-        return longest
-            
-print(lengthOfLongestSubstring(s))
+print(isPalindrome(s))
