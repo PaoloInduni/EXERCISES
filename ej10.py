@@ -18,4 +18,4 @@ def isSubsequence(s, t):
 
         return sub==s
 
-isSubsequence(s,t)
+print(isSubsequence(s,t))
